@@ -1,0 +1,19 @@
+# Analytics Policy Configuration
+# This file defines governance boundaries for the analytics MCP server.
+# The MCP server reads this from the analytics API backend (not stored locally).
+
+[boundaries]
+raw_sql_allowed = false
+pii_column_access = "denied"          # "denied" | "approved_only" | "allowed"
+row_limit = 10000
+time_range_limit_days = 365
+customer_level_export = "requires_approval"  # "denied" | "requires_approval" | "allowed"
+employee_level_export = "denied"
+financial_metric_access = "approved_only"    # "denied" | "approved_only" | "allowed"
+external_sharing_allowed = false
+metric_certification_required = true
+
+[audit]
+log_all_queries = true
+log_exports = true
+retention_days = 90

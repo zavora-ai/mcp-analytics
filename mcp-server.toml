@@ -1,0 +1,149 @@
+[server]
+id = "mcp_analytics"
+display_name = "Analytics"
+version = "1.0.0"
+domain = "business-systems"
+risk_level = "medium"
+writes_allowed = "gated"
+transports = ["stdio"]
+credentials = []
+
+[[tools]]
+name = "list_data_sources"
+description = "List all connected data sources"
+risk_class = "read_only"
+
+[[tools]]
+name = "list_datasets"
+description = "List all available datasets/tables"
+risk_class = "read_only"
+
+[[tools]]
+name = "describe_dataset"
+description = "Describe a dataset — schema, row count, freshness"
+risk_class = "read_only"
+
+[[tools]]
+name = "list_metrics"
+description = "List all defined metrics"
+risk_class = "read_only"
+
+[[tools]]
+name = "get_metric_definition"
+description = "Get full metric definition"
+risk_class = "read_only"
+
+[[tools]]
+name = "query_metric"
+description = "Query a metric over a time range"
+risk_class = "read_only"
+
+[[tools]]
+name = "breakdown_metric"
+description = "Break down a metric by dimension"
+risk_class = "read_only"
+
+[[tools]]
+name = "compare_metric"
+description = "Compare a metric across two periods"
+risk_class = "read_only"
+
+[[tools]]
+name = "query_events"
+description = "Query raw events with filters"
+risk_class = "read_only"
+
+[[tools]]
+name = "query_report"
+description = "Run a saved/named report"
+risk_class = "read_only"
+
+[[tools]]
+name = "analyze_funnel"
+description = "Analyze funnel conversion rates"
+risk_class = "read_only"
+
+[[tools]]
+name = "analyze_cohort"
+description = "Analyze cohort retention"
+risk_class = "read_only"
+
+[[tools]]
+name = "detect_anomalies"
+description = "Detect anomalies in a metric"
+risk_class = "read_only"
+
+[[tools]]
+name = "forecast_metric"
+description = "Forecast a metric forward"
+risk_class = "read_only"
+
+[[tools]]
+name = "explain_change"
+description = "Explain why a metric changed"
+risk_class = "read_only"
+
+[[tools]]
+name = "generate_insight_summary"
+description = "Generate AI-powered insight summary"
+risk_class = "read_only"
+
+[[tools]]
+name = "list_dashboards"
+description = "List all dashboards"
+risk_class = "read_only"
+
+[[tools]]
+name = "get_dashboard"
+description = "Get full dashboard definition"
+risk_class = "read_only"
+
+[[tools]]
+name = "summarize_dashboard"
+description = "Summarize a dashboard's key takeaways"
+risk_class = "read_only"
+
+[[tools]]
+name = "create_dashboard"
+description = "Create a new dashboard"
+risk_class = "internal_write"
+
+[[tools]]
+name = "add_widget"
+description = "Add a widget to a dashboard"
+risk_class = "internal_write"
+
+[[tools]]
+name = "publish_dashboard"
+description = "Publish a dashboard"
+risk_class = "internal_write"
+
+[[tools]]
+name = "validate_analytics_policy"
+description = "Validate if an action is allowed by policy"
+risk_class = "governance"
+
+[[tools]]
+name = "check_export_risk"
+description = "Assess risk level of exporting data"
+risk_class = "governance"
+
+[[tools]]
+name = "request_data_access"
+description = "Request access to restricted data"
+risk_class = "governance"
+
+[[tools]]
+name = "get_query_audit_trail"
+description = "Get audit trail of queries"
+risk_class = "read_only"
+
+[[tools]]
+name = "get_segments"
+description = "List all user segments"
+risk_class = "read_only"
+
+[[tools]]
+name = "query_segment"
+description = "Query a segment"
+risk_class = "read_only"
