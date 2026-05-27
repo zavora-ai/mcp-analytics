@@ -1,6 +1,6 @@
 [package]
 name = "mcp-analytics"
-version = "1.0.1"
+version = "1.0.2"
 edition = "2024"
 authors = ["James Karanja <james.karanja@zavora.ai>"]
 description = "Governed Analytics MCP Server — metrics, dashboards, funnels, cohorts, anomalies, forecasting, and policy enforcement for AI agents"
