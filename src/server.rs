@@ -97,7 +97,7 @@ pub struct AnalyticsServer {
     pub api: AnalyticsApi,
 }
 
-#[tool_router(server_handler)]
+#[tool_router]
 impl AnalyticsServer {
     // === Discovery (5) ===
 
@@ -422,4 +422,11 @@ impl AnalyticsServer {
             None => format!("Segment {} not found", input.segment_id),
         }
     }
+}
+
+adk_mcp_sdk::mcp_2026_server! {
+    server: AnalyticsServer,
+    task_tools: ["analyze_funnel", "analyze_cohort", "forecast_metric", "generate_insight_summary", "check_export_risk"],
+    approval_tools: [],
+    cache_ttl_ms: 60_000,
 }
