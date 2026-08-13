@@ -1,6 +1,6 @@
 server_id = "mcp_analytics"
 display_name = "Analytics"
-version = "1.0.2"
+version = "1.1.0"
 domain = "analytics"
 sdk_version = "0.2.0"
 risk_level = "medium"

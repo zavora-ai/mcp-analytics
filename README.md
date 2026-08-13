@@ -141,7 +141,7 @@ The analytics server enforces policy at every step:
 ```toml
 server_id = "mcp_analytics"
 display_name = "Analytics"
-version = "1.0.0"
+version = "1.1.0"
 domain = "business-systems"
 risk_level = "medium"
 writes_allowed = "gated"
