@@ -1,149 +1,207 @@
-[server]
-id = "mcp_analytics"
+server_id = "mcp_analytics"
 display_name = "Analytics"
 version = "1.0.2"
-domain = "business-systems"
+domain = "analytics"
+sdk_version = "0.2.0"
 risk_level = "medium"
 writes_allowed = "gated"
 transports = ["stdio"]
 credentials = []
+governance_gates = []
+environments = ["development", "staging", "production"]
 
 [[tools]]
 name = "list_data_sources"
 description = "List all connected data sources"
 risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
 
 [[tools]]
 name = "list_datasets"
 description = "List all available datasets/tables"
 risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
 
 [[tools]]
 name = "describe_dataset"
-description = "Describe a dataset — schema, row count, freshness"
+description = "Describe a dataset — schema, row count, freshness, column types"
 risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
 
 [[tools]]
 name = "list_metrics"
-description = "List all defined metrics"
+description = "List all defined metrics with owners and certification status"
 risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
 
 [[tools]]
 name = "get_metric_definition"
-description = "Get full metric definition"
+description = "Get full metric definition — formula, aggregation, dimensions, dataset"
 risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
 
 [[tools]]
 name = "query_metric"
-description = "Query a metric over a time range"
+description = "Query a metric over a time range — returns time-series data"
 risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
 
 [[tools]]
 name = "breakdown_metric"
-description = "Break down a metric by dimension"
+description = "Break down a metric by dimension (country, plan, device, source)"
 risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
 
 [[tools]]
 name = "compare_metric"
-description = "Compare a metric across two periods"
+description = "Compare a metric across two time periods"
 risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
 
 [[tools]]
 name = "query_events"
-description = "Query raw events with filters"
+description = "Query raw events with optional event name filter"
 risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
 
 [[tools]]
 name = "query_report"
 description = "Run a saved/named report"
 risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
 
 [[tools]]
 name = "analyze_funnel"
-description = "Analyze funnel conversion rates"
+description = "Analyze funnel conversion rates through steps"
 risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
 
 [[tools]]
 name = "analyze_cohort"
 description = "Analyze cohort retention"
 risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
 
 [[tools]]
 name = "detect_anomalies"
-description = "Detect anomalies in a metric"
+description = "Detect anomalies in a metric's recent data"
 risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
 
 [[tools]]
 name = "forecast_metric"
-description = "Forecast a metric forward"
+description = "Forecast a metric N days forward with confidence intervals"
 risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
 
 [[tools]]
 name = "explain_change"
-description = "Explain why a metric changed"
+description = "Explain why a metric changed — dimension attribution analysis"
 risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
 
 [[tools]]
 name = "generate_insight_summary"
-description = "Generate AI-powered insight summary"
+description = "Generate an AI-powered insight summary of key findings"
 risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
 
 [[tools]]
 name = "list_dashboards"
 description = "List all dashboards"
 risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
 
 [[tools]]
 name = "get_dashboard"
-description = "Get full dashboard definition"
+description = "Get full dashboard definition with all widgets"
 risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
 
 [[tools]]
 name = "summarize_dashboard"
 description = "Summarize a dashboard's key takeaways"
 risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
 
 [[tools]]
 name = "create_dashboard"
 description = "Create a new dashboard"
 risk_class = "internal_write"
+requires_approval = false
+credential_bindings = []
 
 [[tools]]
 name = "add_widget"
-description = "Add a widget to a dashboard"
+description = "Add a widget (line_chart, bar_chart, number, table, funnel) to a dashboard"
 risk_class = "internal_write"
+requires_approval = false
+credential_bindings = []
 
 [[tools]]
 name = "publish_dashboard"
-description = "Publish a dashboard"
+description = "Publish a dashboard — makes it visible to the team"
 risk_class = "internal_write"
+requires_approval = false
+credential_bindings = []
 
 [[tools]]
 name = "validate_analytics_policy"
-description = "Validate if an action is allowed by policy"
-risk_class = "governance"
+description = "Validate if an action is allowed by analytics policy"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
 
 [[tools]]
 name = "check_export_risk"
-description = "Assess risk level of exporting data"
-risk_class = "governance"
+description = "Assess risk level of exporting data from a dataset"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
 
 [[tools]]
 name = "request_data_access"
-description = "Request access to restricted data"
-risk_class = "governance"
+description = "Request access to restricted data (PII, financial, employee)"
+risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
 
 [[tools]]
 name = "get_query_audit_trail"
-description = "Get audit trail of queries"
+description = "Get audit trail of analytics queries and actions"
 risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
 
 [[tools]]
 name = "get_segments"
 description = "List all user segments"
 risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
 
 [[tools]]
 name = "query_segment"
-description = "Query a segment"
+description = "Query a segment — get user count and definition"
 risk_class = "read_only"
+requires_approval = false
+credential_bindings = []
